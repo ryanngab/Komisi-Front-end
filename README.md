@@ -1,70 +1,151 @@
-# Getting Started with Create React App
+# Sistem Komisi dan Pembayaran
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Selamat datang di proyek Sistem Komisi dan Pembayaran! Proyek ini adalah aplikasi yang menggunakan React.js untuk frontend dan Laravel untuk backend, dirancang untuk menghitung komisi marketing dan mengelola pembayaran secara kredit berdasarkan data penjualan.
 
-## Available Scripts
+## Daftar Isi
 
-In the project directory, you can run:
+-   [Pengenalan](#pengenalan)
+-   [Fitur](#fitur)
+-   [Teknologi yang Digunakan](#teknologi-yang-digunakan)
+-   [Instalasi](#instalasi)
+-   [Penggunaan](#penggunaan)
+-   [API](#api)
+-   [Kontribusi](#kontribusi)
+-   [Lisensi](#lisensi)
 
-### `npm start`
+## Pengenalan
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Proyek ini adalah aplikasi yang mencakup API backend berbasis Laravel untuk menghitung komisi marketing berdasarkan omzet bulanan dan mengelola pembayaran secara kredit. Sistem ini juga dilengkapi dengan frontend berbasis React.js untuk melakukan dan memantau pembayaran.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Fitur
 
-### `npm test`
+1. **Perhitungan Komisi Marketing**:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    - Menghitung komisi marketing berdasarkan omzet dengan ketentuan:
+        - 0 - 100.000.000: 0%
+        - 100.000.000 - 200.000.000: 2.5%
+        - 200.000.000 - 500.000.000: 5%
+        - >= 500.000.000: 10%
+    - Menampilkan hasil perhitungan komisi per bulan untuk setiap marketing.
 
-### `npm run build`
+2. **Manajemen Pembayaran**:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    - Membuat tabel pembayaran untuk melakukan pembayaran secara kredit.
+    - API untuk melakukan dan memantau pembayaran.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. **Manajemen Penjualan**:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    - Mengelola data penjualan untuk menghitung omzet bulanan.
+    - Menampilkan data penjualan.
 
-### `npm run eject`
+4. **Manajemen Marketing**:
+    - Menampilkan data marketing.
+    - Menambah data marketing.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Teknologi yang Digunakan
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+-   **Frontend**:
+    - React.js: Library JavaScript untuk membangun antarmuka pengguna.
+    - Axios: Library untuk melakukan request HTTP dari frontend.
+    - Bootstrap: Framework CSS untuk desain responsif.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+-   **Backend**:
+    - Laravel: Framework PHP untuk membangun aplikasi web yang robust.
+    - MySQL: Sistem manajemen basis data untuk menyimpan data marketing dan penjualan.
+    - Sanctum: Paket Laravel untuk otentikasi API.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+-   **Lainnya**:
+    - Git: Sistem kontrol versi untuk melacak perubahan dan berkolaborasi dalam proyek.
+    - GitHub: Platform untuk hosting dan menerbitkan proyek.
 
-## Learn More
+## Instalasi
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Backend (Laravel)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Clone repositori: `git clone https://github.com/ryanngab/Komisi-Back-end.git`
+2. Masuk ke direktori backend: `cd Komisi-Back-end`
+3. Instal dependensi: `composer install`
+4. Salin file konfigurasi lingkungan: `cp .env.example .env`
+5. Buat kunci aplikasi: `php artisan key:generate`
+6. **Konfigurasikan file `.env` Anda**:
+    - Pastikan Anda mengatur detail database Anda di `.env`:
+        ```env
+        DB_CONNECTION=mysql
+        DB_HOST=127.0.0.1
+        DB_PORT=3306
+        DB_DATABASE=nama_database_anda
+        DB_USERNAME=username_anda
+        DB_PASSWORD=password_anda
+        ```
+7. Jalankan migrasi dan seeder database: `php artisan migrate --seed`
+8. Mulai server pengembangan: `php artisan serve`
 
-### Code Splitting
+### Frontend (React.js)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Clone repositori: `git clone https://github.com/ryanngab/Komisi-Front-end.git`
+2. Masuk ke direktori frontend: `cd Komisi-Front-end`
+3. Instal dependensi: `npm install`
+4. Mulai server pengembangan: `npm start`
+5. Buka browser Anda dan kunjungi: `http://localhost:3000`
 
-### Analyzing the Bundle Size
+## Penggunaan
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Setelah menginstal dan menjalankan proyek secara lokal, Anda dapat mengakses aplikasi dan menggunakan fitur-fitur yang tersedia. Berikut adalah cara menggunakan fitur utama:
 
-### Making a Progressive Web App
+1. **Perhitungan Komisi**:
+    - Akses halaman komisi di frontend untuk melihat komisi marketing berdasarkan omzet bulanan.
+    - Akses endpoint API untuk menghitung dan menampilkan komisi marketing: `http://localhost:8000/api/komisi`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+2. **Manajemen Pembayaran**:
+    - Akses halaman pembayaran di frontend untuk membuat dan memantau pembayaran.
+    - Akses endpoint API untuk melakukan dan memantau pembayaran: `http://localhost:8000/api/pembayaran`
 
-### Advanced Configuration
+3. **Manajemen Penjualan**:
+    - Akses halaman penjualan di frontend untuk mengelola data penjualan.
+    - Akses endpoint API untuk menambah dan menampilkan data penjualan: `http://localhost:8000/api/penjualan`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+4. **Manajemen Marketing**:
+    - Akses halaman marketing di frontend untuk mengelola data marketing.
+    - Akses endpoint API untuk menambah dan menampilkan data marketing: `http://localhost:8000/api/marketing`
 
-### Deployment
+## API
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Dokumentasi lengkap API dapat ditemukan dalam file koleksi Postman di folder `postman/komisi-postman-collection.json`. Gunakan Postman untuk mengimpor koleksi ini dan menjalankan request API dengan mudah.
 
-### `npm run build` fails to minify
+### Perhitungan Komisi
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-   **Endpoint**: `GET /api/komisi`
+-   **Deskripsi**: Menampilkan komisi marketing berdasarkan omzet bulanan.
+-   **Response**:
+    ```json
+    [
+        {
+            "marketing": "Alfandy",
+            "bulan": "Mei",
+            "omzet": 138000000,
+            "komisi_persen": 2.5,
+            "komisi_nominal": 3450000
+        },
+        {
+            "marketing": "Mery",
+            "bulan": "Mei",
+            "omzet": 80000000,
+            "komisi_persen": 0,
+            "komisi_nominal": 0
+        }
+    ]
+    ```
+
+## Kontribusi
+
+Kontribusi sangat diterima! Jika Anda ingin berkontribusi pada proyek ini, silakan ikuti langkah-langkah berikut:
+
+1. Fork repositori.
+2. Buat cabang baru untuk fitur atau perbaikan bug Anda: `git checkout -b my-feature`
+3. Commit perubahan Anda: `git commit -m 'Menambahkan fitur baru'`
+4. Push ke cabang: `git push origin my-feature`
+5. Buka pull request.
+
+## Lisensi
+
+Proyek ini dilisensikan di bawah [MIT License](LICENSE).
