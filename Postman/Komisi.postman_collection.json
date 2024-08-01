@@ -1,0 +1,199 @@
+{
+	"info": {
+		"_postman_id": "78a5f452-be61-42aa-854a-bdef903018c1",
+		"name": "Komisi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27312032",
+		"_collection_link": "https://universal-star-987023.postman.co/workspace/a026a08d-f1f7-4ed5-b106-a41ec8ec8128/collection/27312032-78a5f452-be61-42aa-854a-bdef903018c1?action=share&source=collection_link&creator=27312032"
+	},
+	"item": [
+		{
+			"name": "Daftar Komisi",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/commissions",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"commissions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pembayaran",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"penjualan_id\": 1,\r\n    \"amount\": 500000,\r\n    \"payment_method\": \"credit card\",\r\n    \"payment_date\": \"2023-07-01\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/pembayaran",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"pembayaran"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Daftar Pembayaran",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/daftar-pembayaran",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"daftar-pembayaran"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Daftar Marketing",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/daftar-marketing",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"daftar-marketing"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Marketing",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\":\"dani\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/create-marketing",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"create-marketing"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Daftar Penjualan",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/daftar-penjualan",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"daftar-penjualan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create Penjualan",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"marketing_id\": 2,\r\n  \"date\": \"2024-08-01\",\r\n  \"cargo_fee\": 40000,\r\n  \"total_balance\": 100000\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/create-penjualan",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"create-penjualan"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
