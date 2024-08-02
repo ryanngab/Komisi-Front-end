@@ -2,6 +2,16 @@
 
 Selamat datang di proyek Sistem Komisi dan Pembayaran! Proyek ini adalah aplikasi yang menggunakan React.js untuk frontend dan Laravel untuk backend, dirancang untuk menghitung komisi marketing dan mengelola pembayaran secara kredit berdasarkan data penjualan.
 
+## Some Images:
+<img width="450px;" src="/Img_readme/Komisi.png"/>
+<img width="450px;" src="/Img_readme/Marketing.png"/>
+<img width="450px;" src="/Img_readme/Marketing2.png"/>
+<img width="450px;" src="/Img_readme/Pembayaran.png"/>
+<img width="450px;" src="/Img_readme/Pembayaran2.png"/>
+<img width="450px;" src="/Img_readme/Penjualan.png"/>
+<img width="450px;" src="/Img_readme/Penjualan2.png"/>
+
+
 ## Daftar Isi
 
 -   [Pengenalan](#pengenalan)
@@ -47,12 +57,13 @@ Proyek ini adalah aplikasi yang mencakup API backend berbasis Laravel untuk meng
 -   **Frontend**:
     - React.js: Library JavaScript untuk membangun antarmuka pengguna.
     - Axios: Library untuk melakukan request HTTP dari frontend.
-    - Bootstrap: Framework CSS untuk desain responsif.
+    - HTML
+    - CSS
+    - Javascript
 
 -   **Backend**:
     - Laravel: Framework PHP untuk membangun aplikasi web yang robust.
     - MySQL: Sistem manajemen basis data untuk menyimpan data marketing dan penjualan.
-    - Sanctum: Paket Laravel untuk otentikasi API.
 
 -   **Lainnya**:
     - Git: Sistem kontrol versi untuk melacak perubahan dan berkolaborasi dalam proyek.
