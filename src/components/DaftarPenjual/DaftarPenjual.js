@@ -88,7 +88,6 @@ const DaftarPenjual = () => {
 }
 
 const Modal = ({ onClose, marketingData, addNewPenjualan }) => {
-    const [transactionNumber, setTransactionNumber] = useState('');
     const [marketingId, setMarketingId] = useState('');
     const [date, setDate] = useState('');
     const [cargoFee, setCargoFee] = useState('');
@@ -120,7 +119,6 @@ const Modal = ({ onClose, marketingData, addNewPenjualan }) => {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    transaction_number: transactionNumber,
                     marketing_id: marketingId,
                     date: date,
                     cargo_fee: cargoFee.replace(/\./g, ''),

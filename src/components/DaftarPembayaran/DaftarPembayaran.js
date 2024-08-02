@@ -95,7 +95,7 @@ const Modal = ({ onClose, addNewPembayaran }) => {
     const [amount, setAmount] = useState('');
     const [paymentDate, setPaymentDate] = useState('');
     const [paymentMethod, setPaymentMethod] = useState('Credit');
-    const [message, setMessage] = useState('');
+    const [message] = useState('');
 
     // Ambil data penjualan untuk opsi Select saat modal dimuat
     useEffect(() => {
